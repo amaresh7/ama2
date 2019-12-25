@@ -2,7 +2,7 @@ node {
 
    stage('SCM') {
       // git clone
-	  git 'https://github.com/GitPracticeRepo/spring-petclinic.git'
+	  git 'https://github.com/amaresh7/ama2.git'
    }
    
    stage ('build the packages') {
@@ -16,5 +16,4 @@ node {
      // archiving artifacts
 	 archive 'target/*.jar'
    }
-
 }
