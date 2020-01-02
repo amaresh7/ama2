@@ -1,10 +1,20 @@
-node('MAVEN') {
-    stage('SCM') {
-      // git clone
-	  git 'https://github.com/amaresh7/ama2.git'
-	  sh label: '', script: 'echo "git clone is susscess"'
+pipeline{
+ agent any
+   stages{
+     stage('build'){
+       steps{
+         
+       }
+     }
+     stage('test'){
+       steps{
+          echo "This is a test"
+        }
+      }
+     stage('deploy'){
+       steps{
+          echo "This is a deploy"
+     }
    }
-   stage('CLEAN'){
-       sh label: '', script: 'mvn clean'
-   }
+ }
 }
