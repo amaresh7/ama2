@@ -1,19 +1,10 @@
-node ('MAVEN') {
-
-   stage('SCM') {
+node('MAVEN') {
+    stage('SCM') {
       // git clone
 	  git 'https://github.com/amaresh7/ama2.git'
+	  sh label: '', script: 'echo "git clone is susscess"'
    }
-   
-   stage ('build the packages') {
-      // mvn package
-	  sh 'mvn package'
-   }
-
-   
-   
-   stage ('archival') {
-     // archiving artifacts
-	 archive 'target/*.jar'
+   stage('CLEAN'){
+       sh label: '', script: 'mvn clean'
    }
 }
