@@ -3,12 +3,13 @@ pipeline{
    stages{
      stage('build'){
        steps{
-         
+         git 'https://github.com/amaresh7/ama2.git'
        }
      }
      stage('test'){
        steps{
-          echo "This is a test"
+          sh label: '', script: 'mvn package'
+          
         }
       }
      stage('deploy'){
