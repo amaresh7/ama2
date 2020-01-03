@@ -1,9 +1,6 @@
 pipeline{
- agent {
-   node('MAVEN') {
-    // some block
-   }
- }
+ agent { node { label 'MAVEN' } }
+ 
    stages{
      stage('build'){
        steps{
