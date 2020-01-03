@@ -8,8 +8,7 @@ pipeline{
      }
      stage('test'){
        steps{
-          sh label: '', script: 'mvn package'
-          
+         sh label: '', script: 'mvn package'  
         }
       }
      stage('deploy'){
