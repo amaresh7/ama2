@@ -15,7 +15,9 @@ pipeline{
       }
      stage('deploy'){
        steps{
-         sh label: '', script: 'echo "deploy"'
+         sh"""
+           ssh -o StrictHostKeyChecking=no target/myweb.war jenkins@172.31.45.85:/opt/tomcat8/webapps/
+        """
      }
    }
  }
