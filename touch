@@ -16,7 +16,7 @@ pipeline{
      stage('deploy'){
        steps{
          sh"""
-           ssh -o StrictHostKeyChecking=no target/myweb.war jenkins@172.31.45.85:/home/jenkins/opt/tomcat8/webapps
+           scp -o StrictHostKeyChecking=no target/myweb.war jenkins@172.31.45.85:/home/jenkins/opt/tomcat8/webapps
         """
      }
    }
