@@ -1,5 +1,9 @@
 pipeline{
- agent any
+ agent {
+   node('MAVEN') {
+    // some block
+   }
+ }
    stages{
      stage('build'){
        steps{
@@ -13,7 +17,7 @@ pipeline{
       }
      stage('deploy'){
        steps{
-          echo "This is a deploy"
+         sh label: '', script: 'echo "deploy"'
      }
    }
  }
