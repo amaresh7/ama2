@@ -1,23 +1,19 @@
 pipeline{
- agent { node { label 'MAVEN' } }
- 
+ agent any
    stages{
      stage('build'){
        steps{
-         git 'https://github.com/amaresh7/ama2.git'
+          echo "This is a build"
        }
      }
      stage('test'){
        steps{
-         sh label: '', script: 'mvn package'  
-         sh label: '', script: 'mv target/*.jar target/myweb.war'
+          echo "This is a test"
         }
       }
      stage('deploy'){
        steps{
-         sh"""
-           scp -o StrictHostKeyChecking=no target/myweb.war jenkins@172.31.45.85:/home/jenkins/opt/tomcat8/webapps
-        """
+          echo "This is a deploy"
      }
    }
  }
