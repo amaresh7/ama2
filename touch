@@ -6,6 +6,6 @@ node('MAVEN') {
        sh label: '', script: 'mvn package'
 }
     stage('PBA') {
-       sh label: '', script: 'echo "result is shown"'
+       archiveArtifacts 'target/*.jar'
 }
 }
