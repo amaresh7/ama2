@@ -1,20 +1,11 @@
-pipeline{
- agent any
-   stages{
-     stage('build'){
-       steps{
-          echo "This is a build"
-       }
-     }
-     stage('test'){
-       steps{
-          echo "This is a test"
-        }
-      }
-     stage('deploy'){
-       steps{
-          echo "This is a deploy"
-     }
-   }
- }
+node('MAVEN') {
+    stage('SCM') {
+       git 'https://github.com/spring-projects/spring-petclinic.git'
+}
+    stage('mvn') {
+       sh label: '', script: 'mvn package'
+}
+    stage('PBA') {
+       sh label: '', script: 'echo "result is shown"'
+}
 }
