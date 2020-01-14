@@ -9,5 +9,6 @@ node('MAVEN') {
        archiveArtifacts 'target/*.jar'
 }
     stage('email') {
-       
+       sh label: '', script: 'echo "buld processing"'
+}
 }
