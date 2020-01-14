@@ -9,7 +9,7 @@ node('MAVEN') {
        archiveArtifacts 'target/*.jar'
 }
     stage('deployment to tomcat') {
-    sshagent(['tomcat-dev']) {
+    sshagent(['jenkins']) {
       sh 'scp -o StrictHostKeyChecking=no target/*.jar jenkins@172.31.34.240:~'
 }
 }
