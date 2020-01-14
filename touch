@@ -10,7 +10,7 @@ node('MAVEN') {
 }
     stage('deployment to tomcat') {
     sshagent(['tomcat-dev']) {
-      sh 'scp -o StrictHostKeyChecking=no target/*.war jenkins@3.6.87.230:~'
+      sh 'scp -o StrictHostKeyChecking=no target/*.war jenkins@172.31.34.240:~'
 }
 }
 }
