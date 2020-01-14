@@ -8,7 +8,9 @@ node('MAVEN') {
     stage('PBA') {
        archiveArtifacts 'target/*.jar'
 }
-    stage('email') {
-       sh label: '', script: 'echo "buld processing"'
+    stage('deployment to tomcat') {
+    sshagent(['tomcat-dev']) {
+      sh 'scp -o StrictHostKeyChecking=no target/*.war jenkins@3.6.87.230:~'
+}
 }
 }
