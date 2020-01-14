@@ -8,4 +8,7 @@ node('MAVEN') {
     stage('PBA') {
        archiveArtifacts 'target/*.jar'
 }
+    stage('email') {
+       mail bcc: '', body: 'thank you', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'adash6961@gmail.com'
+}
 }
