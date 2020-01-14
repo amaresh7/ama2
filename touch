@@ -1,8 +1,8 @@
 properties([parameters([choice(choices: ['master', 'sprint-1', 'sprint-2'], description: '', name: 'branch')])])
 node('MAVEN') {
     stage('SCM') {
-       sh label: '', script: 'echo "The parameter is $(params.branch)"'
-       git 'https://github.com/amaresh7/ama2.git', branch: "$(params.branch)"
+       sh label: '', script: 'echo "The parameter is ${params.branch}"'
+       git 'https://github.com/amaresh7/ama2.git', branch: "${params.branch}"
 }
     stage('mvn') {
        sh label: '', script: 'mvn package'
