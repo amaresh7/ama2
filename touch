@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: ['master', 'sprint-1', 'sprint-2'], description: '', name: 'branch')])])
+properties([parameters([choice(choices: 'master\nsprint-1\nsprint-2', description: '', name: 'branch')])])
 node('MAVEN') {
     stage('SCM') {
        sh label: '', script: 'echo "The parameter is ${params.branch}"'
