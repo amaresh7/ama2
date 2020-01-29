@@ -1,3 +1,5 @@
+currentBuild.displayName="E-comerse"+currentBuild.number
+
 pipeline {
     agent { node { label 'MAVEN' } } 
     stages {
