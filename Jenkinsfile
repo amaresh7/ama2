@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('scm') {
             steps {
                git 'https://github.com/amaresh7/ama2.git'
             }
         }
-        stage('Example') {
+        stage('build') {
             steps {
                sh label: '', script: 'mvn package'
             }
         }
-        stage('Example') {
+        stage('get') {
             steps {
               archiveArtifacts 'target/*.jar'
             }
