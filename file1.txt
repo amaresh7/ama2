@@ -1,2 +1,3 @@
 hello qthought
 end class
+new class
